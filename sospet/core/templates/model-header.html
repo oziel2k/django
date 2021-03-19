@@ -1,0 +1,52 @@
+    <title>SOS Pet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .jumbotron.header{
+            background-color:#aaaaaa;
+            background-image: linear-gradient(white, silver);
+        }
+
+        #menu a{
+            color: white;
+            background-color: #252525;
+            
+
+        }
+
+        #menu a:hover{
+
+            color: white;
+            background-color: silver;
+            border-botton: white solid 1px;
+        }
+
+    </style>
+
+    <div class="jumbotron header text-center">
+        <h1>SOS PET</h1>
+        <p>Nos ajude a salvar mais Pets</p>  
+    </div>
+
+    <div class="text-right mr-3">
+        <a href="/logout/">Sair</a> 
+    </div>
+
+    <div id="menu">
+        <ul class="nav ml-2">
+            <li class="nav-item">
+                <a class="nav-link" href="/pet/all/">Todos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pet/user/">Meus</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pet/register/">Cadastrar</a>
+            </li>            
+        </ul>
+    </div>

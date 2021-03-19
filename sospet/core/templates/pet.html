@@ -1,0 +1,61 @@
+{% extends "model-page.html"  %}
+
+{% block content %}
+
+<h2 class="text-center">Detalhes do Pet</h2>
+
+<!-- Modal Form -->
+<div class="modal fade" id="modal_confirm">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Deseja realmente excluir este registro?</h4>                
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body text-right">
+                <a href="/pet/delete/{{pet.id}}">
+                    <button type="button" class="btn btn-danger">Confirmar</button>                    
+                </a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+               
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container mp-4 mb-4">
+    <div class="row">
+        <div class="col sm-4">
+            <div style="border-color: silver; border-style:solid; width: 356px; height: 300px;">
+                {% if pet.foto.url is not None %}
+                    <img src={{ pet.foto.url }} width="350" height="263" style="margin-top: 16px">                
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col sm-8">
+            <p>{{ pet.descricao }}</p>
+            <h4>Contato</h4>
+            <p><b>Tel: </b>{{ pet.telefone }}</p>
+            <p><b>E-mail: </b>{{ pet.email }}</p>
+
+            {% if request.user == pet.usuario %}
+                
+                <a href="/pet/register/?id={{pet.id}}">
+                    <button type="button" class="btn btn-primary">Alterar</button>
+                </a>
+
+                <button type="button" class="btn btn-danger" data-toggle="modal" 
+                        data-target="#modal_confirm">Excluir</button>         
+
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
+
